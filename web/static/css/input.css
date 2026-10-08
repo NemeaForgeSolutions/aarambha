@@ -7,7 +7,22 @@
 @source "../../../internal/**/*.go";
 
 @theme {
-  /* ── Onyx palette (dark foundation) ── */
+  --color-navy: #12244F;
+  --color-navy-deep: #0A1128;
+  --color-navy-card: #1B2A4A;
+  --color-navy-muted: #162038;
+  --color-navy-border: rgba(255, 255, 255, 0.12);
+
+  --color-accent: #0284C7;
+  --color-accent-teal: #0D9488;
+  --color-accent-cyan: #00B4D8;
+  --color-accent-glow: #38BDF8;
+
+  --color-gold: #D4A853;
+  --color-gold-light: #E3C169;
+  --color-gold-dark: #A87F26;
+  --color-gold-glow: #FFF3CE;
+
   --color-onyx-950: #0C0D10;
   --color-onyx-900: #111318;
   --color-onyx-800: #181A20;
@@ -15,7 +30,6 @@
   --color-onyx-600: #2A2D37;
   --color-onyx-500: #363942;
 
-  /* ── Champagne gold (luxury accent) ── */
   --color-champagne-200: #F0DCA8;
   --color-champagne-300: #E5C77A;
   --color-champagne-400: #D4A853;
@@ -23,7 +37,6 @@
   --color-champagne-600: #9A7025;
   --color-champagne-700: #7A5718;
 
-  /* ── Ivory (warm neutral) ── */
   --color-ivory-50:  #FDFAF3;
   --color-ivory-100: #F6F2E9;
   --color-ivory-200: #EDE7D9;
@@ -35,19 +48,16 @@
   --color-ivory-800: #2E2D2A;
   --color-ivory-900: #17181C;
 
-  /* ── Sage green (verified / trust) ── */
   --color-sage-400: #7D9B76;
   --color-sage-500: #557A50;
   --color-sage-600: #3E5E39;
-
-  /* ── Legacy amber kept for backward compat (will phase out) ── */
   --color-amber-200: #fde68a;
   --color-amber-300: #fcd34d;
   --color-amber-400: #fbbf24;
   --color-amber-500: #f59e0b;
   --color-amber-600: #d97706;
 
-  /* ── Legacy navy kept for backward compat (will phase out) ── */
+  /* ── Legacy navy kept for backward compat ── */
   --color-navy-700: #1b2a4a;
   --color-navy-800: #101c33;
   --color-navy-900: #0a1120;
@@ -230,3 +240,119 @@ input[type="range"] {
   background-color: #D4A853;
   color: #111318;
 }
+
+.coin-scene {
+  perspective: 900px;
+}
+
+.coin-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.45s ease;
+  will-change: transform, filter;
+}
+
+.coin-scene:hover .coin-tilt {
+  transform: translateY(-8px) rotateY(14deg) rotateX(-8deg) scale(1.06);
+  filter: drop-shadow(0 18px 30px rgba(227, 193, 105, 0.45));
+}
+
+@keyframes coinSweep {
+  0% {
+    transform: translateX(-60px) skewX(-18deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  65% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(180px) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+.coin-sweep {
+  transform: translateX(-60px) skewX(-18deg);
+  opacity: 0;
+}
+
+.coin-scene:hover .coin-sweep {
+  animation: coinSweep 1.25s ease-in-out infinite;
+}
+
+/* ── Press & Media Ticker Marquee ───────────────────────── */
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 36s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  .coin-scene:hover .coin-tilt {
+    transform: none;
+  }
+}
+
+.text-gradient-hero {
+  background: linear-gradient(135deg, #38BDF8 0%, #2DD4BF 45%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(110deg, #D4A853 0%, #FFF3CE 40%, #C79A32 80%, #D4A853 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(110deg, #0284C7 0%, #00B4D8 50%, #0D9488 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes blobMorph {
+  0%, 100% {
+    border-radius: 58% 42% 32% 68% / 56% 34% 66% 44%;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    border-radius: 35% 65% 60% 40% / 45% 60% 40% 55%;
+    transform: translate(12px, -15px) scale(1.04);
+  }
+}
+
+.animate-blob-morph {
+  animation: blobMorph 14s ease-in-out infinite;
+}
+
+/* ── Glow Rings ─────────────────────────────────────────── */
+.glow-accent {
+  transition: box-shadow 0.25s ease;
+}
+
+.glow-accent:hover {
+  box-shadow: 0 0 0 1px rgba(2, 132, 199, 0.3), 0 8px 24px rgba(2, 132, 199, 0.2);
+}
+

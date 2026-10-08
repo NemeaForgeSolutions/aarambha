@@ -1,80 +1,110 @@
 {{define "footer"}}
-<footer class="bg-ivory-100 dark:bg-onyx-950 text-ivory-700 dark:text-ivory-500 border-t border-ivory-300 dark:border-onyx-800 text-sm transition-colors duration-200">
+<footer class="relative overflow-hidden bg-[#0A1128] text-slate-400 border-t border-white/10 text-sm transition-colors duration-200">
+  
+  <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 18px 18px;"></div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
 
+      <!-- Brand & Mission Column -->
       <div class="lg:col-span-2 space-y-4">
         <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-black flex items-center justify-center shadow-md shadow-champagne-500/20 border border-champagne-500/30 overflow-hidden">
+          <div class="w-9 h-9 rounded-xl bg-black flex items-center justify-center shadow-md shadow-accent/20 border border-white/20 overflow-hidden">
             <img src="/static/img/arambha-icon.png" alt="Aarambha" class="w-full h-full object-cover">
           </div>
-          <span class="text-xl font-black tracking-wider text-ivory-900 dark:text-ivory-100 font-serif">
-            AARAMBHA <span class="text-champagne-600 dark:text-champagne-400">AGENCY</span>
+          <span class="text-xl font-black tracking-wider text-white font-sans">
+            AARAMBHA <span class="text-accent-glow font-light">AGENCY</span>
           </span>
         </div>
-        <p class="text-ivory-600 dark:text-ivory-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-          {{.Company.Tagline}}. Specialized in high-value residential homes, sky villas, commercial floor plates, and verified pre-launch investments across Hyderabad, Bengaluru, and Mumbai.
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-sm">
+          {{.Company.Tagline}}. India&#x27;s smart real estate platform — verified listings, fiduciary advisory, zero hidden commission, and high-value property intelligence across top metros.
         </p>
-        <div class="p-3 bg-ivory-200/80 dark:bg-onyx-900/90 rounded-xl border border-ivory-300 dark:border-onyx-700/80 text-xs text-ivory-700 dark:text-ivory-400 transition-colors">
-          <div class="font-bold text-champagne-700 dark:text-champagne-400 mb-1 flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-sage-600 dark:text-sage-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>RERA Registered Brokerage</span>
+
+        <!-- Trust Certification Card -->
+        <div class="p-3.5 bg-white/5 rounded-xl border border-white/10 text-xs text-slate-300">
+          <div class="font-bold text-accent-glow mb-1 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>RERA Registered &amp; Verified Brokerage</span>
           </div>
-          <p class="font-mono text-[11px] text-ivory-600 dark:text-ivory-500">{{.Company.ReraBrokerNumber}}</p>
+          <p class="font-mono text-[11px] text-slate-400">{{.Company.ReraBrokerNumber}}</p>
+        </div>
+
+        <!-- Headquarters Info -->
+        <div class="text-[11px] text-slate-400 space-y-1">
+          <p class="flex items-start gap-1.5">
+            <svg class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>{{.Company.Headquarters.Address}}, {{.Company.Headquarters.City}}, {{.Company.Headquarters.State}} {{.Company.Headquarters.Pincode}}</span>
+          </p>
+          <p class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:{{.Company.Email}}" class="hover:text-accent transition-colors">{{.Company.Email}}</a>
+          </p>
         </div>
       </div>
 
+      <!-- Prime Cities -->
       <div class="space-y-3">
-        <h4 class="text-ivory-900 dark:text-ivory-100 text-xs font-bold uppercase tracking-wider">Prime Cities</h4>
+        <h4 class="text-white text-xs font-bold uppercase tracking-wider">Top Metros</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="/properties?city=Hyderabad" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Hyderabad (Financial Dist / Kokapet)</a></li>
-          <li><a href="/properties?city=Bengaluru" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Bengaluru (Whitefield / Indiranagar)</a></li>
-          <li><a href="/properties?city=Mumbai" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Mumbai (BKC / Bandra / Worli)</a></li>
-          <li><a href="/properties?city=Gurugram" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Delhi NCR (Golf Course Road)</a></li>
-          <li><a href="/locations" class="text-champagne-600 dark:text-champagne-400 hover:text-champagne-700 dark:hover:text-champagne-300 font-semibold inline-block pt-1">Explore All Location Guides →</a></li>
+          <li><a href="/properties?city=Hyderabad" class="text-slate-300 hover:text-accent transition-colors flex items-center gap-1.5"><span class="text-accent/60">→</span>Hyderabad (Kokapet / Jubilee Hills)</a></li>
+          <li><a href="/properties?city=Bengaluru" class="text-slate-300 hover:text-accent transition-colors flex items-center gap-1.5"><span class="text-accent/60">→</span>Bengaluru (Whitefield / Indiranagar)</a></li>
+          <li><a href="/properties?city=Mumbai" class="text-slate-300 hover:text-accent transition-colors flex items-center gap-1.5"><span class="text-accent/60">→</span>Mumbai (BKC / Bandra / Worli)</a></li>
+          <li><a href="/properties?city=Gurugram" class="text-slate-300 hover:text-accent transition-colors flex items-center gap-1.5"><span class="text-accent/60">→</span>Delhi NCR (Golf Course Road)</a></li>
+          <li><a href="/properties?city=Pune" class="text-slate-300 hover:text-accent transition-colors flex items-center gap-1.5"><span class="text-accent/60">→</span>Pune (Koregaon Park / Hinjawadi)</a></li>
+          <li><a href="/locations" class="text-accent font-semibold inline-block pt-1 hover:underline">View all cities in India →</a></li>
         </ul>
       </div>
 
+      <!-- Portfolios -->
       <div class="space-y-3">
-        <h4 class="text-ivory-900 dark:text-ivory-100 text-xs font-bold uppercase tracking-wider">Property Portfolios</h4>
+        <h4 class="text-white text-xs font-bold uppercase tracking-wider">Property Portfolios</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="/properties?type=Apartment" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Luxury Apartments</a></li>
-          <li><a href="/properties?type=Villa" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Gated Triplex Villas</a></li>
-          <li><a href="/properties?type=Penthouse" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Sea-View Penthouses</a></li>
-          <li><a href="/commercial" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Grade-A Commercial Offices</a></li>
-          <li><a href="/rent" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Executive Furnished Rentals</a></li>
-          <li><a href="/new-projects" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">New Builder Launches</a></li>
-          <li><a href="/sell" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Free Property Valuation</a></li>
+          <li><a href="/properties?type=Apartment" class="text-slate-300 hover:text-accent transition-colors">Luxury Apartments</a></li>
+          <li><a href="/properties?type=Villa" class="text-slate-300 hover:text-accent transition-colors">Gated Triplex Villas</a></li>
+          <li><a href="/properties?type=Penthouse" class="text-slate-300 hover:text-accent transition-colors">Sea-View Penthouses</a></li>
+          <li><a href="/commercial" class="text-slate-300 hover:text-accent transition-colors">Grade-A Commercial Offices</a></li>
+          <li><a href="/properties?type=Plot" class="text-slate-300 hover:text-accent transition-colors">Approved Plots &amp; Land</a></li>
+          <li><a href="/rent" class="text-slate-300 hover:text-accent transition-colors">Executive Furnished Rentals</a></li>
+          <li><a href="/new-projects" class="text-slate-300 hover:text-accent transition-colors">New Builder Launches</a></li>
         </ul>
       </div>
 
+      <!-- Client Advisory -->
       <div class="space-y-3">
-        <h4 class="text-ivory-900 dark:text-ivory-100 text-xs font-bold uppercase tracking-wider">Client Advisory</h4>
+        <h4 class="text-white text-xs font-bold uppercase tracking-wider">Advisory &amp; Firm</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="/agents" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Verified Senior Brokers</a></li>
-          <li><a href="/locations" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Prime Micro-Markets</a></li>
-          <li><a href="/insights" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Market Insights &amp; RERA Guides</a></li>
-          <li><a href="/about" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">About Aarambha</a></li>
-          <li><a href="/contact" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-colors">Branch Offices &amp; Contact</a></li>
+          <li><a href="/agents" class="text-slate-300 hover:text-accent transition-colors">Virtual Property Consultants</a></li>
+          <li><a href="/locations" class="text-slate-300 hover:text-accent transition-colors">Prime Micro-Markets</a></li>
+          <li><a href="/insights" class="text-slate-300 hover:text-accent transition-colors">Market Insights &amp; RERA Guides</a></li>
+          <li><a href="/sell" class="text-slate-300 hover:text-accent transition-colors">List Property / Free Valuation</a></li>
+          <li><a href="/about" class="text-slate-300 hover:text-accent transition-colors">About Us</a></li>
+          <li><a href="/contact" class="text-slate-300 hover:text-accent transition-colors">Branch Offices &amp; Contact</a></li>
         </ul>
       </div>
 
     </div>
 
-    <div class="mt-12 pt-6 border-t border-ivory-300 dark:border-onyx-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-ivory-600 dark:text-ivory-500 text-center sm:text-left">
+    <div class="mt-10 pt-6 border-t border-white/10 text-[11px] text-slate-400 leading-relaxed space-y-2">
+      <p class="font-bold text-slate-300 uppercase tracking-wider text-[10px]">Regulatory &amp; Legal Advisory Notice:</p>
+      <p>
+        Aarambha is a high-performance technology-driven real estate platform operating strictly under applicable Real Estate Regulatory Authority (RERA) statutory guidelines. All property listings undergo legal title due diligence. We provide digital discovery, advisory intelligence, and verified listing facilitation. All financial agreements and property transfers are conducted directly between Buyer and Seller/Developer under statutory legal escrow.
+      </p>
+    </div>
+
+    <!-- Bottom Copyright & Back to Top -->
+    <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-slate-400 text-center sm:text-left">
       <p>© {{.Company.EstablishedYear}} - 2026 {{.Company.Name}}. All rights reserved.</p>
       <div class="flex flex-wrap justify-center sm:justify-end items-center gap-3 sm:gap-4">
-        <span>100% RERA Compliant Advisory</span>
+        <span>100% RERA Verified</span>
         <span>·</span>
-        <span>40-Point Title Due Diligence</span>
+        <span>Zero Commission Model</span>
         <span>·</span>
-        <a href="/about" class="text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400">Fiduciary Code &amp; Ethics</a>
+        <a href="/about" class="hover:text-accent transition-colors">Fiduciary Code &amp; Ethics</a>
         <span>·</span>
         <button 
           type="button" 
           @click="window.scrollTo({ top: 0, behavior: 'smooth' })" 
-          class="inline-flex items-center gap-1 text-champagne-600 dark:text-champagne-400 hover:text-champagne-700 dark:hover:text-champagne-300 font-semibold cursor-pointer transition-colors"
+          class="inline-flex items-center gap-1 text-accent hover:text-accent-glow font-semibold cursor-pointer transition-colors"
           title="Scroll to top"
         >
           <span>Top</span>

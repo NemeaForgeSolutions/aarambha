@@ -1,205 +1,352 @@
 {{define "content"}}
 
-<section class="relative min-h-[85vh] lg:min-h-[88vh] flex items-center bg-ivory-100 dark:bg-onyx-900 text-ivory-900 dark:text-ivory-100 overflow-hidden py-12 sm:py-16 lg:py-20 transition-colors duration-200">
+<section class="relative min-h-[85vh] lg:min-h-[88vh] flex flex-col justify-center items-center bg-[#12244F] dark:bg-[#0A1128] text-white overflow-hidden py-14 sm:py-20 lg:py-24 transition-colors duration-200">
   
-  <!-- Cinematic Background -->
-  <div class="absolute inset-0 z-0 pointer-events-none">
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-24 -top-8 h-[460px] w-[460px] animate-blob-morph rounded-full opacity-25 blur-[100px]" style="background: oklch(0.72 0.12 186);"></div>
+    <div class="absolute -left-20 top-1/3 h-[360px] w-[360px] animate-blob-morph rounded-full opacity-20 blur-[80px]" style="background: oklch(0.76 0.14 76);"></div>
+    <div class="absolute bottom-6 right-1/3 h-[240px] w-[240px] animate-float-slow rounded-full opacity-15 blur-[70px]" style="background: oklch(0.72 0.12 186);"></div>
+    
+    <!-- Architectural Silhouette Texture -->
     <img 
       src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85" 
       alt="Luxury Indian Architecture" 
-      class="w-full h-full object-cover opacity-15 sm:opacity-25 dark:opacity-25 dark:sm:opacity-30 scale-105 transform motion-safe:animate-[pulse_12s_ease-in-out_infinite]"
+      class="w-full h-full object-cover opacity-12 mix-blend-overlay scale-105 pointer-events-none"
     >
-    <div class="absolute inset-0 bg-gradient-to-t from-ivory-100 via-ivory-100/90 to-ivory-100/50 dark:from-onyx-950 dark:via-onyx-900/85 dark:to-onyx-900/50"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-ivory-100 via-ivory-100/85 to-transparent dark:from-onyx-950 dark:via-onyx-900/75 dark:to-transparent"></div>
-    <!-- Ambient champagne & lighting orbs -->
-    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-champagne-400/15 dark:bg-champagne-400/8 blur-3xl"></div>
-    <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-champagne-500/10 dark:bg-onyx-700/30 blur-3xl"></div>
+    <!-- Radial dot matrix grid -->
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1.2px, transparent 1.2px); background-size: 24px 24px;"></div>
+    <!-- Orbital decorative ring -->
+    <div class="absolute right-12 bottom-12 h-44 w-44 rounded-full border border-white/10 animate-spin-slow-r hidden md:block"></div>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="max-w-4xl mx-auto text-center space-y-6 sm:space-y-7">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+    
+    <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold backdrop-blur-md text-white shadow-lg shadow-black/20 flex-wrap justify-center">
+      <span class="text-amber-400 text-sm">★</span>
+      <span class="text-white font-bold">4.8</span>
+      <span class="text-white/40">·</span>
+      <span class="text-white/90">1 Lakh+ Verified Customers</span>
+      <span class="text-white/40 hidden sm:inline">·</span>
+      <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>100% RERA Verified</span>
+      </span>
+    </div>
 
-      <!-- Trust Beacon Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 dark:bg-onyx-800/90 border border-ivory-300 dark:border-champagne-400/25 text-[11px] sm:text-xs font-semibold backdrop-blur-md shadow-xs dark:shadow-lg dark:shadow-black/20 flex-wrap transition-colors">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sage-500 dark:bg-sage-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-sage-500 dark:bg-sage-400"></span>
-        </span>
-        <span class="text-champagne-700 dark:text-champagne-400 font-bold">100% RERA Registered Brokerage</span>
-        <span class="text-ivory-300 dark:text-onyx-500 hidden sm:inline">·</span>
-        <span class="text-ivory-700 dark:text-ivory-300">Hyderabad · Bengaluru · Mumbai · NCR</span>
+    <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black leading-[1.1] tracking-tight text-white font-sans max-w-4xl mx-auto">
+      Find a home<br/>
+      <span class="text-gradient-hero">that fits your life.</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-sans">
+      Verified properties. Trusted experts. Seamless zero-compromise experience across India&#x27;s top metros.
+    </p>
+
+    <div 
+      x-data="{ tab: 'Sale' }"
+      class="mx-auto mt-7 sm:mt-9 max-w-3xl overflow-hidden rounded-2xl sm:rounded-3xl bg-white/98 dark:bg-onyx-900/98 backdrop-blur-xl border border-white/30 dark:border-onyx-700 shadow-2xl shadow-navy-deep/60 text-left relative z-20"
+    >
+      <div class="no-scrollbar flex overflow-x-auto border-b border-slate-200 dark:border-onyx-700/80 px-3 pt-3 sm:px-5 gap-1">
+        <button 
+          type="button" 
+          @click="tab = 'Sale'"
+          :class="tab === 'Sale' ? 'border-b-2 border-accent text-accent font-bold bg-accent/8' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent'"
+          class="shrink-0 rounded-t-lg px-3.5 sm:px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer"
+        >
+          Buy
+        </button>
+        <button 
+          type="button" 
+          @click="tab = 'Rent'"
+          :class="tab === 'Rent' ? 'border-b-2 border-accent text-accent font-bold bg-accent/8' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent'"
+          class="shrink-0 rounded-t-lg px-3.5 sm:px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer"
+        >
+          Rent
+        </button>
+        <button 
+          type="button" 
+          @click="tab = 'Commercial'"
+          :class="tab === 'Commercial' ? 'border-b-2 border-accent text-accent font-bold bg-accent/8' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent'"
+          class="shrink-0 rounded-t-lg px-3.5 sm:px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer"
+        >
+          Commercial
+        </button>
+        <button 
+          type="button" 
+          @click="tab = 'Plot'"
+          :class="tab === 'Plot' ? 'border-b-2 border-accent text-accent font-bold bg-accent/8' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent'"
+          class="shrink-0 rounded-t-lg px-3.5 sm:px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer"
+        >
+          Plots &amp; Land
+        </button>
+        <button 
+          type="button" 
+          @click="tab = 'PG'"
+          :class="tab === 'PG' ? 'border-b-2 border-accent text-accent font-bold bg-accent/8' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border-b-2 border-transparent'"
+          class="shrink-0 rounded-t-lg px-3.5 sm:px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer"
+        >
+          PG / Co-living
+        </button>
+        <a 
+          href="/new-projects" 
+          class="shrink-0 rounded-t-lg px-3.5 sm:px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap ml-auto text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 flex items-center gap-1 cursor-pointer"
+        >
+          <span>New Launches</span>
+          <span>→</span>
+        </a>
       </div>
 
-      <!-- Headline -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-serif tracking-tight text-ivory-900 dark:text-ivory-50 leading-[1.12]">
-        Curated Indian Real Estate.
-        <span class="block mt-1 sm:mt-1.5 text-transparent bg-clip-text bg-gradient-to-r from-champagne-600 via-champagne-500 to-champagne-400 dark:from-champagne-200 dark:via-champagne-400 dark:to-champagne-500">
-          Verified Titles. Zero Compromise.
-        </span>
-      </h1>
+      <!-- Search Controls -->
+      <form action="/properties" method="GET" class="p-3.5 sm:p-5 space-y-3">
+        <input type="hidden" name="transaction" :value="tab">
 
-      <!-- Subtitle -->
-      <p class="text-sm sm:text-base lg:text-lg text-ivory-600 dark:text-ivory-400 max-w-2xl mx-auto leading-relaxed">
-        Advising high-net-worth families, CXOs, and NRI investors on prime residential estates, sky penthouses, and Grade-A commercial corridors with 40-point legal due diligence.
-      </p>
-
-      <!-- Search Command Dock -->
-      <div 
-        x-data="{ tab: 'Sale' }"
-        class="glass-dock p-4 sm:p-5 lg:p-6 rounded-2xl sm:rounded-3xl shadow-xl text-left"
-      >
-        
-        <!-- Segmented Tab Strip -->
-        <div class="flex items-center gap-1.5 sm:gap-2 border-b border-ivory-200 dark:border-champagne-400/10 pb-3 mb-4 overflow-x-auto no-scrollbar flex-nowrap">
-          <button 
-            type="button" 
-            @click="tab = 'Sale'"
-            :class="tab === 'Sale' ? 'bg-champagne-400 text-onyx-950 font-extrabold shadow-md shadow-champagne-400/20' : 'text-ivory-600 dark:text-ivory-400 hover:text-ivory-950 dark:hover:text-ivory-100 hover:bg-ivory-200/60 dark:hover:bg-white/5'"
-            class="px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap shrink-0 cursor-pointer"
+        <!-- Locality / Builder Keyword Input -->
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 dark:text-slate-500">
+            <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <input 
+            type="text" 
+            name="q" 
+            placeholder="Search by locality, project or builder (e.g. Kokapet, Jubilee Hills, Whitefield, Worli)" 
+            class="w-full pl-10 sm:pl-11 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-onyx-800/90 border border-slate-200 dark:border-onyx-600 text-slate-900 dark:text-white text-sm outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all font-sans"
           >
-            Buy Properties
-          </button>
-          <button 
-            type="button" 
-            @click="tab = 'Rent'"
-            :class="tab === 'Rent' ? 'bg-champagne-400 text-onyx-950 font-extrabold shadow-md shadow-champagne-400/20' : 'text-ivory-600 dark:text-ivory-400 hover:text-ivory-950 dark:hover:text-ivory-100 hover:bg-ivory-200/60 dark:hover:bg-white/5'"
-            class="px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap shrink-0 cursor-pointer"
-          >
-            Rent Luxury
-          </button>
-          <button 
-            type="button" 
-            @click="tab = 'Commercial'"
-            :class="tab === 'Commercial' ? 'bg-champagne-400 text-onyx-950 font-extrabold shadow-md shadow-champagne-400/20' : 'text-ivory-600 dark:text-ivory-400 hover:text-ivory-950 dark:hover:text-ivory-100 hover:bg-ivory-200/60 dark:hover:bg-white/5'"
-            class="px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap shrink-0 cursor-pointer"
-          >
-            Commercial Offices
-          </button>
-          <a 
-            href="/new-projects" 
-            class="px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-ivory-600 dark:text-ivory-400 hover:text-champagne-600 dark:hover:text-champagne-400 transition-all whitespace-nowrap shrink-0 ml-auto cursor-pointer"
-          >
-            New Launches →
-          </a>
         </div>
 
-        <!-- Adaptive Form Controls -->
-        <form action="/properties" method="GET" class="space-y-3 sm:space-y-3.5">
-          <input type="hidden" name="transaction" :value="tab">
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3">
-            
-            <!-- City Select -->
-            <div>
-              <label class="block text-[10px] font-bold uppercase tracking-wider text-champagne-700 dark:text-champagne-400 mb-1.5 flex items-center gap-1">
-                <svg class="w-3 h-3 text-champagne-600 dark:text-champagne-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                City / Region
-              </label>
-              <div class="relative">
-                <select name="city" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-onyx-800/90 border border-ivory-300 dark:border-onyx-600 text-ivory-900 dark:text-ivory-100 text-sm focus:border-champagne-500 dark:focus:border-champagne-400 focus:ring-2 focus:ring-champagne-500/20 dark:focus:ring-champagne-400/25 outline-none transition-all cursor-pointer">
-                  <option value="">All Metros</option>
-                  <option value="Hyderabad">Hyderabad</option>
-                  <option value="Bengaluru">Bengaluru</option>
-                  <option value="Mumbai">Mumbai</option>
-                  <option value="Gurugram">Gurugram (NCR)</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Property Type Select -->
-            <div>
-              <label class="block text-[10px] font-bold uppercase tracking-wider text-champagne-700 dark:text-champagne-400 mb-1.5 flex items-center gap-1">
-                <svg class="w-3 h-3 text-champagne-600 dark:text-champagne-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                Property Type
-              </label>
-              <div class="relative">
-                <select name="type" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-onyx-800/90 border border-ivory-300 dark:border-onyx-600 text-ivory-900 dark:text-ivory-100 text-sm focus:border-champagne-500 dark:focus:border-champagne-400 focus:ring-2 focus:ring-champagne-500/20 dark:focus:ring-champagne-400/25 outline-none transition-all cursor-pointer">
-                  <option value="">All Asset Types</option>
-                  <option value="Apartment">Apartment</option>
-                  <option value="Villa">Triplex Villa</option>
-                  <option value="Penthouse">Sea/Sky Penthouse</option>
-                  <option value="Commercial">Commercial Floor</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- BHK Select -->
-            <div class="sm:col-span-2 md:col-span-1">
-              <label class="block text-[10px] font-bold uppercase tracking-wider text-champagne-700 dark:text-champagne-400 mb-1.5 flex items-center gap-1">
-                <svg class="w-3 h-3 text-champagne-600 dark:text-champagne-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                Bedrooms (BHK)
-              </label>
-              <div class="relative">
-                <select name="bhk" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-onyx-800/90 border border-ivory-300 dark:border-onyx-600 text-ivory-900 dark:text-ivory-100 text-sm focus:border-champagne-500 dark:focus:border-champagne-400 focus:ring-2 focus:ring-champagne-500/20 dark:focus:ring-champagne-400/25 outline-none transition-all cursor-pointer">
-                  <option value="">Any Configuration</option>
-                  <option value="2">2 BHK</option>
-                  <option value="3">3 BHK</option>
-                  <option value="4">4 BHK</option>
-                  <option value="5">5+ BHK / Villa</option>
-                </select>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Submit CTA Button -->
-          <div>
-            <button 
-              type="submit" 
-              class="w-full py-3.5 px-6 rounded-xl bg-champagne-400 hover:bg-champagne-300 text-onyx-950 font-extrabold text-sm uppercase tracking-wider shadow-md shadow-champagne-400/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer group"
+        <!-- Filter Selectors -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          
+          <!-- City Selector -->
+          <div class="relative">
+            <select 
+              name="city" 
+              class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-onyx-800/90 border border-slate-200 dark:border-onyx-600 text-slate-900 dark:text-white text-xs sm:text-sm outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all cursor-pointer"
             >
-              <svg class="w-4 h-4 text-onyx-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-              <span x-text="tab === 'Sale' ? 'Explore Curated Luxury Homes' : (tab === 'Rent' ? 'Search Executive Rental Homes' : 'Search Commercial Corridors')">Explore Curated Luxury Homes</span>
-              <svg class="w-4 h-4 text-onyx-950 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </button>
+              <option value="">All Metros &amp; Cities</option>
+              <option value="Hyderabad">Hyderabad (Hitec / Kokapet)</option>
+              <option value="Bengaluru">Bengaluru (Whitefield / Indiranagar)</option>
+              <option value="Mumbai">Mumbai (BKC / Bandra / Worli)</option>
+              <option value="Gurugram">Delhi NCR (Golf Course Rd)</option>
+              <option value="Pune">Pune (Koregaon Park / Hinjawadi)</option>
+              <option value="Chennai">Chennai (OMR / Boat Club)</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Ahmedabad">Ahmedabad</option>
+            </select>
           </div>
-        </form>
 
-        <!-- Trending Quick Links -->
-        <div class="pt-3 border-t border-ivory-200 dark:border-champagne-400/10 mt-3 flex items-center gap-2 text-xs text-ivory-600 dark:text-ivory-500 flex-wrap">
-          <span class="text-champagne-700 dark:text-champagne-400 font-semibold flex items-center gap-1 shrink-0">
-            <svg class="w-3.5 h-3.5 text-champagne-600 dark:text-champagne-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-            Trending:
-          </span>
-          <a href="/properties?city=Hyderabad&q=Kokapet" class="px-2.5 py-1 rounded-lg bg-ivory-200/80 hover:bg-champagne-500/15 text-ivory-700 hover:text-champagne-700 border border-ivory-300 dark:bg-white/5 dark:hover:bg-champagne-400/15 dark:hover:text-champagne-300 dark:border-white/8 dark:text-ivory-400 transition-colors text-[11px] cursor-pointer">Kokapet Villas</a>
-          <a href="/properties?city=Hyderabad&q=Jubilee+Hills" class="px-2.5 py-1 rounded-lg bg-ivory-200/80 hover:bg-champagne-500/15 text-ivory-700 hover:text-champagne-700 border border-ivory-300 dark:bg-white/5 dark:hover:bg-champagne-400/15 dark:hover:text-champagne-300 dark:border-white/8 dark:text-ivory-400 transition-colors text-[11px] cursor-pointer">Jubilee Hills</a>
-          <a href="/properties?city=Bengaluru&q=Whitefield" class="px-2.5 py-1 rounded-lg bg-ivory-200/80 hover:bg-champagne-500/15 text-ivory-700 hover:text-champagne-700 border border-ivory-300 dark:bg-white/5 dark:hover:bg-champagne-400/15 dark:hover:text-champagne-300 dark:border-white/8 dark:text-ivory-400 transition-colors text-[11px] cursor-pointer">Whitefield (Blr)</a>
-          <a href="/properties?city=Mumbai&q=Worli" class="px-2.5 py-1 rounded-lg bg-ivory-200/80 hover:bg-champagne-500/15 text-ivory-700 hover:text-champagne-700 border border-ivory-300 dark:bg-white/5 dark:hover:bg-champagne-400/15 dark:hover:text-champagne-300 dark:border-white/8 dark:text-ivory-400 transition-colors text-[11px] cursor-pointer">Worli Sea-Face</a>
+          <!-- Property Type Selector -->
+          <div class="relative">
+            <select 
+              name="type" 
+              class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-onyx-800/90 border border-slate-200 dark:border-onyx-600 text-slate-900 dark:text-white text-xs sm:text-sm outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all cursor-pointer"
+            >
+              <option value="">All Property Types</option>
+              <option value="Apartment">Luxury Apartment</option>
+              <option value="Villa">Gated Triplex Villa</option>
+              <option value="Penthouse">Sea / Sky Penthouse</option>
+              <option value="Commercial">Commercial Office</option>
+              <option value="Plot">Plots &amp; Land</option>
+              <option value="PG">PG / Co-living</option>
+            </select>
+          </div>
+
+          <!-- BHK / Configuration -->
+          <div class="relative">
+            <select 
+              name="bhk" 
+              class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-onyx-800/90 border border-slate-200 dark:border-onyx-600 text-slate-900 dark:text-white text-xs sm:text-sm outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all cursor-pointer"
+            >
+              <option value="">Any Configuration</option>
+              <option value="2">2 BHK</option>
+              <option value="3">3 BHK</option>
+              <option value="4">4 BHK</option>
+              <option value="5">5+ BHK / Sky Villa</option>
+            </select>
+          </div>
+
         </div>
 
+        <!-- Submit Button -->
+        <div>
+          <button 
+            type="submit" 
+            class="w-full py-3.5 px-6 rounded-xl bg-accent hover:bg-sky-600 dark:bg-accent dark:hover:bg-sky-500 text-white font-extrabold text-sm uppercase tracking-wider shadow-lg shadow-accent/25 hover:shadow-accent/40 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer group"
+          >
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <span x-text="tab === 'Sale' ? 'Search Verified Homes' : (tab === 'Rent' ? 'Search Rental Properties' : (tab === 'Commercial' ? 'Search Commercial Spaces' : (tab === 'Plot' ? 'Explore Verified Plots' : 'Find Co-living / PG')))">Search Verified Homes</span>
+            <svg class="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Micro Trust Tag & Trending Chips -->
+      <div class="px-3.5 sm:px-5 pb-3.5 pt-1 border-t border-slate-100 dark:border-onyx-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+        <span class="flex items-center gap-1 font-medium">
+          <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Zero Commission · Direct Verified Listings
+        </span>
+        <div class="flex items-center gap-1.5 flex-wrap justify-center">
+          <span class="font-bold text-slate-700 dark:text-slate-300">Trending:</span>
+          <a href="/properties?city=Hyderabad&q=Kokapet" class="text-accent hover:underline">Kokapet</a>
+          <span>·</span>
+          <a href="/properties?city=Hyderabad&q=Jubilee+Hills" class="text-accent hover:underline">Jubilee Hills</a>
+          <span>·</span>
+          <a href="/properties?city=Bengaluru&q=Whitefield" class="text-accent hover:underline">Whitefield</a>
+          <span>·</span>
+          <a href="/properties?city=Mumbai&q=Worli" class="text-accent hover:underline">Worli</a>
+        </div>
       </div>
 
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-[#0A1128] border-y border-white/10 text-white py-4 overflow-hidden relative" aria-label="Media Recognition">
+  <div class="flex items-center">
+    <div class="shrink-0 px-4 sm:px-6 text-xs font-bold uppercase tracking-wider text-accent-glow flex items-center gap-2 border-r border-white/10 z-10 bg-[#0A1128]">
+      <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+      <span class="hidden sm:inline">In The News</span>
+      <span class="sm:hidden">Press</span>
+    </div>
+    
+    <div class="overflow-hidden whitespace-nowrap flex-1">
+      <div class="animate-marquee flex items-center gap-8 text-xs text-slate-300">
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">The Economic Times</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">Disrupts India&#x27;s real estate commission model with zero-fee verified platform</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">Forbes India</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">The proptech startup making homebuying transparent, trusted, and affordable</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">Business Standard</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">How AI matching &amp; legal diligence are transforming property discovery in Indian metros</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">Mint</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">RERA verification at scale — pioneering approach to 100% fraud-free listings</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">YourStory</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">From search to possession: End-to-end trusted real estate ecosystem</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+
+        <!-- Duplicated for continuous marquee scroll -->
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">The Economic Times</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">Disrupts India&#x27;s real estate commission model with zero-fee verified platform</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">Forbes India</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">The proptech startup making homebuying transparent, trusted, and affordable</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">Business Standard</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">How AI matching &amp; legal diligence are transforming property discovery in Indian metros</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">Mint</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">RERA verification at scale — pioneering approach to 100% fraud-free listings</span>
+          <span class="text-white/40">”</span>
+        </div>
+        <span class="text-accent/60">◆</span>
+        
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-bold text-white tracking-wide">YourStory</span>
+          <span class="text-white/40">“</span>
+          <span class="text-slate-300">From search to possession: End-to-end trusted real estate ecosystem</span>
+          <span class="text-white/40">”</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Stats Showcase -->
-<section class="bg-ivory-200/80 dark:bg-onyx-800/95 border-y border-ivory-300 dark:border-onyx-600 text-ivory-900 dark:text-ivory-100 py-8 sm:py-10 relative z-20 transition-colors duration-200">
+<section class="bg-gradient-to-b from-[#12244F] to-[#0A1128] text-white border-b border-white/10 relative overflow-hidden py-10 sm:py-14">
+  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 18px 18px;"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent-glow text-[11px] font-bold uppercase tracking-wider mb-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-ping"></span>
+        Trust &amp; Safety Framework
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight">
+        Why Over 1 Lakh+ Buyers Trust Us
+      </h2>
+      <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-xl mx-auto">
+        Every property is verified, every owner is vetted, and every transaction is backed by regulatory diligence.
+      </p>
+    </div>
+
+    <!-- The 6 Signature 3D Gold Medallions -->
+    {{template "trust_coins" .}}
+  </div>
+</section>
+
+<!-- Platform Metrics Stats Showcase -->
+<section class="bg-white dark:bg-onyx-900 border-b border-slate-200 dark:border-onyx-800 text-slate-900 dark:text-white py-8 sm:py-10 relative z-20 transition-colors duration-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
       
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-onyx-900/60 border border-ivory-300 dark:border-onyx-600/80 hover:border-champagne-400/35 transition-all text-center group shadow-xs">
-        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-champagne-600 dark:text-champagne-400 font-serif tracking-tight group-hover:scale-105 transition-transform duration-300">₹450+ Cr</span>
-        <span class="text-xs sm:text-sm text-ivory-800 dark:text-ivory-300 font-semibold block mt-1">Verified Assets Advised</span>
-        <span class="text-[11px] text-ivory-600 dark:text-ivory-500 hidden sm:block mt-0.5">High-value residential &amp; commercial</span>
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-onyx-800/60 border border-slate-200 dark:border-onyx-700/80 hover:border-accent/40 transition-all text-center group shadow-xs">
+        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-accent dark:text-accent-glow font-sans tracking-tight group-hover:scale-105 transition-transform duration-300">₹450+ Cr</span>
+        <span class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold block mt-1">Verified Assets Advised</span>
+        <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block mt-0.5">High-value residential &amp; commercial</span>
       </div>
 
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-onyx-900/60 border border-ivory-300 dark:border-onyx-600/80 hover:border-sage-400/35 transition-all text-center group shadow-xs">
-        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-sage-600 dark:text-sage-400 font-serif tracking-tight group-hover:scale-105 transition-transform duration-300">100%</span>
-        <span class="text-xs sm:text-sm text-ivory-800 dark:text-ivory-300 font-semibold block mt-1">Fiduciary Transparency</span>
-        <span class="text-[11px] text-ivory-600 dark:text-ivory-500 hidden sm:block mt-0.5">Zero bias, buyer-first advisory</span>
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-onyx-800/60 border border-slate-200 dark:border-onyx-700/80 hover:border-emerald-400/40 transition-all text-center group shadow-xs">
+        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-emerald-600 dark:text-emerald-400 font-sans tracking-tight group-hover:scale-105 transition-transform duration-300">100%</span>
+        <span class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold block mt-1">RERA &amp; Fiduciary Transparency</span>
+        <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block mt-0.5">Zero bias, buyer-first advisory</span>
       </div>
 
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-onyx-900/60 border border-ivory-300 dark:border-onyx-600/80 hover:border-champagne-400/35 transition-all text-center group shadow-xs">
-        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-champagne-600 dark:text-champagne-400 font-serif tracking-tight group-hover:scale-105 transition-transform duration-300">14+ Yrs</span>
-        <span class="text-xs sm:text-sm text-ivory-800 dark:text-ivory-300 font-semibold block mt-1">Senior Advisory Experience</span>
-        <span class="text-[11px] text-ivory-600 dark:text-ivory-500 hidden sm:block mt-0.5">HNW &amp; NRI advisory desks</span>
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-onyx-800/60 border border-slate-200 dark:border-onyx-700/80 hover:border-gold/40 transition-all text-center group shadow-xs">
+        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-gold dark:text-gold-light font-sans tracking-tight group-hover:scale-105 transition-transform duration-300">₹0</span>
+        <span class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold block mt-1">Zero Commission Platform</span>
+        <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block mt-0.5">No middlemen, direct owner deals</span>
       </div>
 
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-onyx-900/60 border border-ivory-300 dark:border-onyx-600/80 hover:border-champagne-400/35 transition-all text-center group shadow-xs">
-        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-ivory-900 dark:text-ivory-100 font-serif tracking-tight group-hover:scale-105 transition-transform duration-300">4 Metros</span>
-        <span class="text-xs sm:text-sm text-ivory-800 dark:text-ivory-300 font-semibold block mt-1">Prime Regional Corridors</span>
-        <span class="text-[11px] text-ivory-600 dark:text-ivory-500 hidden sm:block mt-0.5">Hyd · Blr · Mum · NCR</span>
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-onyx-800/60 border border-slate-200 dark:border-onyx-700/80 hover:border-accent/40 transition-all text-center group shadow-xs">
+        <span class="block text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight group-hover:scale-105 transition-transform duration-300">4.8 ★</span>
+        <span class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold block mt-1">Customer Trust Rating</span>
+        <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block mt-0.5">Based on 10,000+ verified reviews</span>
       </div>
 
     </div>

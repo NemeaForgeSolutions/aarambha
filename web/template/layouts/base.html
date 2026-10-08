@@ -18,8 +18,7 @@
     })();
   </script>
 
-  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#F6F2E9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12244f">
 
   <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
   <link rel="apple-touch-icon" href="/static/img/favicon.svg">
@@ -149,7 +148,7 @@
   }"
   @open-lead.window="openLead($event.detail.title, $event.detail.propertyId, $event.detail.propertyTitle)"
   @scroll.window.passive="showScrollTop = (window.pageYOffset > 300)"
-  class="bg-ivory-100 text-ivory-900 dark:bg-onyx-900 dark:text-ivory-100 antialiased selection:bg-champagne-400 selection:text-onyx-900 flex flex-col min-h-screen"
+  class="bg-[#F8FAFC] text-slate-900 dark:bg-[#0A1128] dark:text-slate-100 antialiased selection:bg-accent selection:text-white flex flex-col min-h-screen transition-colors duration-200"
 >
 
   {{template "navbar" .}}
@@ -174,7 +173,7 @@
       x-transition:leave-start="opacity-100 translate-y-0 scale-100"
       x-transition:leave-end="opacity-0 translate-y-4 scale-75"
       @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      class="w-11 h-11 rounded-2xl bg-onyx-950/90 dark:bg-onyx-800/95 text-champagne-400 hover:text-champagne-300 hover:bg-black dark:hover:bg-onyx-700 border border-champagne-500/30 shadow-xl shadow-black/30 backdrop-blur-md flex items-center justify-center transition-all duration-200 hover:-translate-y-1 active:scale-95 group cursor-pointer"
+      class="w-11 h-11 rounded-2xl bg-[#12244F] text-accent-glow hover:text-white hover:bg-accent border border-white/20 shadow-xl shadow-black/30 backdrop-blur-md flex items-center justify-center transition-all duration-200 hover:-translate-y-1 active:scale-95 group cursor-pointer"
       title="Go to Top"
       aria-label="Go to Top"
       style="display: none;"
