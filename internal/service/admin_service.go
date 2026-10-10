@@ -1,7 +1,7 @@
 package service
 
 import (
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 type AdminService struct {

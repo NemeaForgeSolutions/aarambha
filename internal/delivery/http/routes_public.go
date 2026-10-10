@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"dharavath-agency/internal/delivery/http/handler"
-	"dharavath-agency/web"
+	"aarambha-agency/internal/delivery/http/handler"
+	"aarambha-agency/web"
 )
 
 // registerStaticAndMetaRoutes sets up static asset serving, favicons, manifests, SEO, and health checks.

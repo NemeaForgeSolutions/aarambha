@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"dharavath-agency/internal/service"
-	"dharavath-agency/internal/view"
+	"aarambha-agency/internal/service"
+	"aarambha-agency/internal/view"
 )
 
 // Authenticate extracts session cookie and injects *domain.User into context if valid.

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/internal/pkg/uuid"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/internal/pkg/uuid"
 )
 
 type UserRepo struct {

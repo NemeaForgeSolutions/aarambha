@@ -9,19 +9,19 @@ import (
 	"syscall"
 	"time"
 
-	"dharavath-agency/configs"
-	deliveryHttp "dharavath-agency/internal/delivery/http"
-	"dharavath-agency/internal/delivery/http/handler"
-	"dharavath-agency/internal/repository/postgres"
-	"dharavath-agency/internal/service"
-	"dharavath-agency/internal/view"
+	"aarambha-agency/configs"
+	deliveryHttp "aarambha-agency/internal/delivery/http"
+	"aarambha-agency/internal/delivery/http/handler"
+	"aarambha-agency/internal/repository/postgres"
+	"aarambha-agency/internal/service"
+	"aarambha-agency/internal/view"
 )
 
 func main() {
 	cfg := configs.LoadConfig()
 
 	if cfg.DatabaseURL == "" {
-		log.Fatalf("Fatal: DATABASE_URL environment variable is required. Dharavath Agency is a PostgreSQL/Supabase-backed application.")
+		log.Fatalf("Fatal: DATABASE_URL environment variable is required.")
 	}
 
 	log.Printf("Initializing PostgreSQL connection...")

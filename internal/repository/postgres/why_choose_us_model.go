@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 // WhyChooseUsModel maps to the 'highlights' table in PostgreSQL.

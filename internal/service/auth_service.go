@@ -12,12 +12,12 @@ import (
 	"strings"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 	"golang.org/x/crypto/bcrypt"
 )
 
 const (
-	SessionCookieName = "dharavath_session"
+	SessionCookieName = "aarambha_session"
 	DefaultSessionTTL = 7 * 24 * time.Hour
 )
 
@@ -36,7 +36,7 @@ type AuthService struct {
 
 func NewAuthService(repo domain.UserRepository, sessionSecret string) *AuthService {
 	if strings.TrimSpace(sessionSecret) == "" {
-		sessionSecret = "dharavath-default-secret-salt-2026"
+		sessionSecret = "aarambha-default-secret-salt-2026"
 	}
 	return &AuthService{
 		userRepo:      repo,

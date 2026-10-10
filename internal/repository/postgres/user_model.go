@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 // UserModel maps to the 'users' table in PostgreSQL.

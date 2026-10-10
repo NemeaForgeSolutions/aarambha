@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 // AgentModel maps to the 'agents' table in PostgreSQL.

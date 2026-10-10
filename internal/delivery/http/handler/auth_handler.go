@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"strings"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/internal/service"
-	"dharavath-agency/internal/view"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/internal/service"
+	"aarambha-agency/internal/view"
 )
 
 type AuthHandler struct {
@@ -55,7 +55,7 @@ func (h *AuthHandler) LoginPage(w http.ResponseWriter, r *http.Request) {
 
 	pageData := view.PageData{
 		Title:       "Sign In to Advisory Account",
-		Description: "Access Dharavath Agency luxury properties portfolio, client dashboards and advisory management",
+		Description: "Access Aarambha Agency luxury properties portfolio, client dashboards and advisory management",
 		ActivePage:  "login",
 		Company:     h.company,
 		Data: map[string]interface{}{
@@ -94,7 +94,7 @@ func (h *AuthHandler) LoginSubmit(w http.ResponseWriter, r *http.Request) {
 
 		pageData := view.PageData{
 			Title:       "Sign In to Advisory Account",
-			Description: "Access Dharavath Agency luxury properties portfolio, client dashboards and advisory management",
+			Description: "Access Aarambha Agency luxury properties portfolio, client dashboards and advisory management",
 			ActivePage:  "login",
 			Company:     h.company,
 			Data: map[string]interface{}{
@@ -130,7 +130,6 @@ func (h *AuthHandler) LoginSubmit(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/profile", http.StatusSeeOther)
 }
 
-
 func (h *AuthHandler) Logout(w http.ResponseWriter, r *http.Request) {
 	h.authService.ClearSessionCookie(w, h.isProduction)
 	http.Redirect(w, r, "/login?msg=logged_out", http.StatusSeeOther)
@@ -145,7 +144,7 @@ func (h *AuthHandler) ProfilePage(w http.ResponseWriter, r *http.Request) {
 
 	var successMsg string
 	if r.URL.Query().Get("msg") == "welcome" {
-		successMsg = "Welcome to Dharavath Agency! Your account has been initialized."
+		successMsg = "Welcome to Aarambha Agency! Your account has been initialized."
 	} else if r.URL.Query().Get("msg") == "updated" {
 		successMsg = "Your profile details have been successfully updated."
 	}

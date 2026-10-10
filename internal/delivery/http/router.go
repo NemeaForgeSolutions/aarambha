@@ -3,9 +3,9 @@ package http
 import (
 	"net/http"
 
-	"dharavath-agency/internal/delivery/http/handler"
-	"dharavath-agency/internal/delivery/http/middleware"
-	"dharavath-agency/internal/service"
+	"aarambha-agency/internal/delivery/http/handler"
+	"aarambha-agency/internal/delivery/http/middleware"
+	"aarambha-agency/internal/service"
 )
 
 type RouterConfig struct {

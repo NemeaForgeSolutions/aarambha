@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 // SystemStats contains runtime diagnostics for the health check.

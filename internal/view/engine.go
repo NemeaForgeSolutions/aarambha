@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strings"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/web"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/web"
 )
 
 type Engine struct {

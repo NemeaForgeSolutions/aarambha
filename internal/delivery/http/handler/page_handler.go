@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/internal/service"
-	"dharavath-agency/internal/view"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/internal/service"
+	"aarambha-agency/internal/view"
 )
 
 type PageHandler struct {
@@ -79,9 +79,9 @@ func (h *PageHandler) Home(w http.ResponseWriter, r *http.Request) {
 
 	pageData := view.PageData{
 		Title:        "Premium Indian Real Estate Brokerage & Property Advisory",
-		Description:  "Dharavath Agency is an ethical Indian real estate brokerage specializing in luxury homes, apartments, villas, and commercial spaces across Hyderabad, Bengaluru, Mumbai, and NCR.",
+		Description:  "Aarambha Agency is an ethical Indian real estate brokerage specializing in luxury homes, apartments, villas, and commercial spaces across Hyderabad, Bengaluru, Mumbai, and NCR.",
 		ActivePage:   "home",
-		CanonicalURL: "https://dharavathagency.in/",
+		CanonicalURL: "https://aarambha.in/",
 		Company:      h.company,
 		Data:         data,
 	}
@@ -96,7 +96,7 @@ func (h *PageHandler) Locations(w http.ResponseWriter, r *http.Request) {
 		Title:        "Prime Metropolitan Real Estate Corridors & Micro-Market Guides",
 		Description:  "Comprehensive capital value benchmarks, rental yields, and investment corridors across Hyderabad, Bengaluru, Mumbai, and Gurugram.",
 		ActivePage:   "locations",
-		CanonicalURL: "https://dharavathagency.in/locations",
+		CanonicalURL: "https://aarambha.in/locations",
 		Company:      h.company,
 		Data: struct {
 			Locations []domain.LocationInsight
@@ -115,7 +115,7 @@ func (h *PageHandler) Commercial(w http.ResponseWriter, r *http.Request) {
 		Title:        "Grade-A Commercial Real Estate & Pre-Leased Office Assets",
 		Description:  "Explore Grade-A institutional office spaces, IT SEZ floor plates, and pre-leased commercial assets yielding 7.5% - 9.2% net returns.",
 		ActivePage:   "commercial",
-		CanonicalURL: "https://dharavathagency.in/commercial",
+		CanonicalURL: "https://aarambha.in/commercial",
 		Company:      h.company,
 		Data: struct {
 			Properties []domain.Property
@@ -134,7 +134,7 @@ func (h *PageHandler) Rent(w http.ResponseWriter, r *http.Request) {
 		Title:        "Luxury Executive Rentals & Fully Furnished Homes",
 		Description:  "Explore verified high-end rental apartments and villas in prime gated communities close to major tech clusters.",
 		ActivePage:   "rent",
-		CanonicalURL: "https://dharavathagency.in/rent",
+		CanonicalURL: "https://aarambha.in/rent",
 		Company:      h.company,
 		Data: struct {
 			Properties []domain.Property
@@ -151,7 +151,7 @@ func (h *PageHandler) Sell(w http.ResponseWriter, r *http.Request) {
 		Title:        "Sell or Lease Your Luxury Property | Free Market Valuation",
 		Description:  "Discreet, confidential seller representation for high-value villas, sky penthouses, and commercial parcels with institutional buyer access.",
 		ActivePage:   "sell",
-		CanonicalURL: "https://dharavathagency.in/sell",
+		CanonicalURL: "https://aarambha.in/sell",
 		Company:      h.company,
 		Data:         nil,
 	}
@@ -166,7 +166,7 @@ func (h *PageHandler) NewProjects(w http.ResponseWriter, r *http.Request) {
 		Title:        "RERA Approved Pre-Launch & Under-Construction Developer Projects",
 		Description:  "Discover curated early-stage developer launches from Prestige, Godrej, and My Home Group with verified escrow accounts and construction milestones.",
 		ActivePage:   "new-projects",
-		CanonicalURL: "https://dharavathagency.in/new-projects",
+		CanonicalURL: "https://aarambha.in/new-projects",
 		Company:      h.company,
 		Data: struct {
 			Projects []domain.Project
@@ -185,7 +185,7 @@ func (h *PageHandler) Agents(w http.ResponseWriter, r *http.Request) {
 		Title:        "Licensed Advisory Leaders & Verified Real Estate Brokers",
 		Description:  "Meet our senior property consultants across Hyderabad, Bengaluru, and Mumbai with verified RERA credentials and hyper-local expertise.",
 		ActivePage:   "agents",
-		CanonicalURL: "https://dharavathagency.in/agents",
+		CanonicalURL: "https://aarambha.in/agents",
 		Company:      h.company,
 		Data: struct {
 			Agents []domain.Agent
@@ -204,7 +204,7 @@ func (h *PageHandler) Insights(w http.ResponseWriter, r *http.Request) {
 		Title:        "Indian Real Estate Insights, RERA Checklists & Tax Guides",
 		Description:  "Expert regulatory insights, home loan tax deduction guides, NRI property buying regulations, and quarterly corridor absorption reports.",
 		ActivePage:   "insights",
-		CanonicalURL: "https://dharavathagency.in/insights",
+		CanonicalURL: "https://aarambha.in/insights",
 		Company:      h.company,
 		Data: struct {
 			Insights []domain.InsightArticle
@@ -218,10 +218,10 @@ func (h *PageHandler) Insights(w http.ResponseWriter, r *http.Request) {
 
 func (h *PageHandler) About(w http.ResponseWriter, r *http.Request) {
 	pageData := view.PageData{
-		Title:        "About Dharavath Agency | Ethical Fiduciary Advisory",
-		Description:  "Founded in 2025, Dharavath Agency was built to restore trust and transparency to Indian property transactions with strict 40-point legal title verification.",
+		Title:        "About Aarambha Agency | Ethical Fiduciary Advisory",
+		Description:  "Founded in 2025, Aarambha Agency was built to restore trust and transparency to Indian property transactions with strict 40-point legal title verification.",
 		ActivePage:   "about",
-		CanonicalURL: "https://dharavathagency.in/about",
+		CanonicalURL: "https://aarambha.in/about",
 		Company:      h.company,
 		Data:         nil,
 	}
@@ -231,10 +231,10 @@ func (h *PageHandler) About(w http.ResponseWriter, r *http.Request) {
 
 func (h *PageHandler) Contact(w http.ResponseWriter, r *http.Request) {
 	pageData := view.PageData{
-		Title:        "Contact Dharavath Agency Advisory Desks | Hyderabad, Bengaluru, Mumbai",
+		Title:        "Contact Aarambha Agency Advisory Desks | Hyderabad, Bengaluru, Mumbai",
 		Description:  "Get in touch with our licensed real estate advisors or visit our regional headquarters in Hitec City, Indiranagar, or BKC.",
 		ActivePage:   "contact",
-		CanonicalURL: "https://dharavathagency.in/contact",
+		CanonicalURL: "https://aarambha.in/contact",
 		Company:      h.company,
 		Data:         nil,
 	}

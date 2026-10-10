@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 type Config struct {
@@ -36,7 +36,7 @@ func LoadConfig() *Config {
 	supabaseURL := getEnv("SUPABASE_URL", "")
 	supabaseSecretKey := getEnv("SUPABASE_SECRET_KEY", "")
 	supabaseBucket := getEnv("SUPABASE_BUCKET", "test-bkt")
-	sessionSecret := getEnv("SESSION_SECRET", getEnv("SUPABASE_SECRET_KEY", "dharavath-agency-auth-salt-7386985852"))
+	sessionSecret := getEnv("SESSION_SECRET", getEnv("SUPABASE_SECRET_KEY", "aarambha-agency-auth-salt-7386985852"))
 
 	readTimeoutSec, _ := strconv.Atoi(getEnv("READ_TIMEOUT_SEC", "10"))
 	writeTimeoutSec, _ := strconv.Atoi(getEnv("WRITE_TIMEOUT_SEC", "15"))

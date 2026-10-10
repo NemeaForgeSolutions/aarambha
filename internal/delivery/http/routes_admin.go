@@ -3,7 +3,7 @@ package http
 import (
 	"net/http"
 
-	"dharavath-agency/internal/delivery/http/middleware"
+	"aarambha-agency/internal/delivery/http/middleware"
 )
 
 // registerAdminRoutes configures protected backoffice administration routes.

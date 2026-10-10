@@ -25,10 +25,10 @@ css:
 	npm run build:css
 
 docker-build:
-	docker build -t dharavath-agency:latest .
+	docker build -t aarambha-agency:latest .
 
 docker-run:
-	docker run -p 8080:8080 -e PORT=8080 dharavath-agency:latest
+	docker run -p 8080:8080 -e PORT=8080 aarambha-agency:latest
 
 upload-images:
 	go run ./cmd/uploader

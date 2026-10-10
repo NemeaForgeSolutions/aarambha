@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 // LeadModel maps to the 'leads' table in PostgreSQL.

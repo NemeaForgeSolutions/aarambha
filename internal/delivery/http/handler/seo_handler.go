@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/internal/service"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/internal/service"
 )
 
 type SEOHandler struct {
@@ -94,7 +94,7 @@ func (h *SEOHandler) SitemapXML(w http.ResponseWriter, r *http.Request) {
 func (h *SEOHandler) RobotsTxt(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, `# Dharavath Agency Robots Rules
+	fmt.Fprintf(w, `# Aarambha Agency Robots Rules
 User-agent: *
 Allow: /
 Disallow: /admin/

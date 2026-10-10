@@ -21,14 +21,13 @@ func OpenDB(dbURL string) (*sql.DB, error) {
 		return nil, fmt.Errorf("failed to parse database configuration: %w", err)
 	}
 
-	// Supabase PgBouncer / Supavisor transaction pooler compatibility (port 6543):
 	// Using QueryExecModeSimpleProtocol avoids prepared statement caching conflicts:
 	// "ERROR: prepared statement already exists (SQLSTATE 42P05)"
 	connConfig.DefaultQueryExecMode = pgx.QueryExecModeSimpleProtocol
 
 	db := stdlib.OpenDB(*connConfig)
 
-	// Connection pool tuning for cloud and Supabase connections
+	// Connection pool tuning for cloud and db connections
 	db.SetMaxOpenConns(25)
 	db.SetMaxIdleConns(10)
 	db.SetConnMaxLifetime(15 * time.Minute)

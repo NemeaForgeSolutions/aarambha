@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 // TestimonialModel maps to the 'testimonials' table in PostgreSQL.

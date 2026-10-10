@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 type PropertyService struct {

@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/internal/service"
-	"dharavath-agency/internal/view"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/internal/service"
+	"aarambha-agency/internal/view"
 )
 
 type AdminHandler struct {
@@ -46,7 +46,7 @@ func (h *AdminHandler) Dashboard(w http.ResponseWriter, r *http.Request) {
 
 	pageData := view.PageData{
 		Title:       "Admin Portal - Real Estate Management",
-		Description: "Dharavath Agency Internal Inventory and Advisory Management System",
+		Description: "Aarambha Agency Internal Inventory and Advisory Management System",
 		ActivePage:  "admin-dashboard",
 		Company:     h.company,
 		User:        view.UserFromContext(r.Context()),

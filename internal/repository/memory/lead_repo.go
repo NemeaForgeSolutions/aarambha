@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"dharavath-agency/internal/domain"
+	"aarambha-agency/internal/domain"
 )
 
 type LeadRepo struct {

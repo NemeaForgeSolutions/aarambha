@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/internal/service"
-	"dharavath-agency/internal/view"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/internal/service"
+	"aarambha-agency/internal/view"
 )
 
 type LeadHandler struct {

@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"dharavath-agency/internal/domain"
-	"dharavath-agency/internal/service"
-	"dharavath-agency/internal/view"
+	"aarambha-agency/internal/domain"
+	"aarambha-agency/internal/service"
+	"aarambha-agency/internal/view"
 )
 
 type PropertyHandler struct {
@@ -58,7 +58,7 @@ func (h *PropertyHandler) List(w http.ResponseWriter, r *http.Request) {
 		Title:        "Discover Luxury Properties & Commercial Real Estate",
 		Description:  "Explore verified luxury apartments, gated villas, penthouses, and Grade-A commercial office spaces across Hyderabad, Bengaluru, Mumbai, and NCR.",
 		ActivePage:   "buy",
-		CanonicalURL: "https://dharavathagency.in/properties",
+		CanonicalURL: "https://aarambha.in/properties",
 		Company:      h.company,
 		Data: struct {
 			Properties []domain.Property
@@ -147,7 +147,7 @@ func (h *PropertyHandler) Detail(w http.ResponseWriter, r *http.Request) {
 		Title:        prop.Title,
 		Description:  prop.Description,
 		ActivePage:   "buy",
-		CanonicalURL: "https://dharavathagency.in/properties/" + prop.Slug,
+		CanonicalURL: "https://aarambha.in/properties/" + prop.Slug,
 		OGType:       "article",
 		OGImage:      prop.Image,
 		Company:      h.company,

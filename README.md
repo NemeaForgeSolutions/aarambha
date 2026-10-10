@@ -1,4 +1,4 @@
-# Dharavath Agency
+# Aarambha Agency
 
 A high-performance real estate discovery and advisory platform built with **Go**, **HTMX**, **Alpine.js**, and **Tailwind CSS v4**.
 
@@ -148,4 +148,4 @@ Docker container health is checked automatically via `HEALTHCHECK` in the `Docke
 
 ## License
 
-Proprietary. Developed for **Dharavath Agency** by **NemeaForge Solutions**.
+Proprietary. Developed for **Aarambha Agency** by **NemeaForge Solutions**.
